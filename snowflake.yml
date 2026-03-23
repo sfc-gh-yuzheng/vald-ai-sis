@@ -1,0 +1,38 @@
+# snowflake.yml — Streamlit in Snowflake project definition
+# << CHANGE values marked below to match your environment >>
+definition_version: 2
+entities:
+  vald_performance_intelligence_v2:            # << CHANGE THIS: entity key (lowercase, underscores)
+    type: streamlit
+    identifier:
+      name: VALD_PERFORMANCE_INTELLIGENCE_V2   # << CHANGE THIS: Streamlit object name
+      database: VALD                           # << CHANGE THIS: your database
+      schema: GOLD                             # << CHANGE THIS: your schema
+    title: "VALD Performance Intelligence V2"  # << CHANGE THIS: display title
+    comment: "Refactored modular version of VALD Performance Intelligence"  # << CHANGE THIS: description
+    query_warehouse: COMPUTE_WH                # << CHANGE THIS: warehouse for queries
+    compute_pool: EDMI_STREAMLIT_POOL          # << CHANGE THIS: your SPCS compute pool (must be STARTED)
+    runtime_name: SYSTEM$ST_CONTAINER_RUNTIME_PY3_11
+    main_file: app.py
+    stage: STREAMLIT_STAGE                     # << CHANGE THIS: stage for app files
+    external_access_integrations:
+      - PYPI_ACCESS_INTEGRATION                # << CHANGE THIS: your PyPI EAI (for pip installs at runtime)
+    artifacts:
+      - app.py
+      - auth.py
+      - charts.py
+      - config.py
+      - helpers.py
+      - messages.py
+      - reasoning.py
+      - requirements.txt
+      - streaming.py
+      - styles.py
+      - threads_api.py
+      - ui.py
+      - vald_logo.webp                        # << CHANGE THIS: your logo filename (must match config.py LOGO_PATH)
+      - js/
+      - .streamlit/config.toml
+    grants:
+      - privilege: USAGE
+        role: VALD_SIS_VIEWER                  # << CHANGE THIS: your viewer role

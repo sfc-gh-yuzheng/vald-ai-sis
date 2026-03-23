@@ -1,0 +1,3 @@
+# The SiS container runtime provides streamlit and snowflake-snowpark-python.
+# Only list additional packages here that are NOT pre-installed in the runtime.
+requests

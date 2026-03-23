@@ -1,0 +1,6 @@
+[theme]
+base = "dark"
+backgroundColor = "#25282A"        # << CHANGE THIS: main background (must match VALD_DARK in config.py)
+secondaryBackgroundColor = "#1a1c1e"  # << CHANGE THIS: sidebar background (must match VALD_DARKER in config.py)
+textColor = "#FFFFFF"
+primaryColor = "#F16E00"           # << CHANGE THIS: accent colour (must match VALD_ORANGE in config.py)
